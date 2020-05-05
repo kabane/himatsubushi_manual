@@ -42,3 +42,5 @@ nbproject
 *.pyc
 
 docker/data
+
+config/master.key
