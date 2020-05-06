@@ -1,0 +1,12 @@
+<h2>コンテンツ一覧</h2>
+
+<ul>
+  <% @contents.each do |content| %>
+    <li>
+      <%= link_to content.title, content_path(content)  %>
+      <ul>
+        <li><%= content.description %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
