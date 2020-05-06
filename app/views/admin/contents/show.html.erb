@@ -1,7 +1,9 @@
 <h2>コンテンツ</h2>
-
+<%= link_to '編集', edit_admin_content_path(@content) %>
+<%= link_to '削除', admin_content_path(@content), method: :delete %>
 <h3><%= @content.title %></h3>
 <p><%= @content.description %></p>
+<%= link_to '戻る', admin_contents_path %>
 
 <h3>関連リンク</h3>
 <ul>
