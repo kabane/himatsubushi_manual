@@ -46,7 +46,7 @@ class Admin::ContentsController < Admin::ApplicationController
   def destroy
     @content.destroy
     respond_to do |format|
-      format.html { redirect_to admin_contents_url, notice: 'Clinic was successfully destroyed.' }
+      format.html { redirect_to admin_contents_url, notice: 'Content was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
