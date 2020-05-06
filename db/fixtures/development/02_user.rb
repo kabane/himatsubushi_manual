@@ -12,12 +12,5 @@ User.seed(
     tel: '09011112222',
     birthday: Date.today.ago(25.year),
     gender: :male,
-  },
-  {
-    last_name: '豊臣',
-    first_name: '秀子',
-    tel: '09033334445',
-    birthday: Date.today.ago(30.year),
-    gender: :female,
   }
 )
