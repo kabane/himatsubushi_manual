@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'contents#index'
 
   resources :contents, only: [:index, :show]
+  
+  namespace :admin do
+    resources :contents
+  end
 end
