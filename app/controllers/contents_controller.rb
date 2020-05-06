@@ -1,7 +1,9 @@
 class ContentsController < ApplicationController
 
   def index
-    @contents = Content.all
+    @q = Content.ransack(params[:q])
+    @contents = @q.result.includes(:categories).to_a.uniq
+    @categories = Category.all
   end
 
   def show
