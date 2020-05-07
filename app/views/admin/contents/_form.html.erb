@@ -21,6 +21,14 @@
     <%= form.text_area :description %>
   </div>
 
+  <div id="contents">
+    <%= form.fields_for :links do |link| %>
+      <%= render "link_fields", f: link %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association "リンク追加", form, :links %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

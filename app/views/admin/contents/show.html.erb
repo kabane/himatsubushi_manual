@@ -3,7 +3,6 @@
 <%= link_to '削除', admin_content_path(@content), method: :delete %>
 <h3><%= @content.title %></h3>
 <p><%= @content.description %></p>
-<%= link_to '戻る', admin_contents_path %>
 
 <h3>関連リンク</h3>
 <ul>
@@ -11,3 +10,5 @@
     <li><%= link_to link.name, link.url, target: :blank %></li>
   <% end %>
 </ul>
+
+<%= link_to '戻る', admin_contents_path %>
