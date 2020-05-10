@@ -16,6 +16,7 @@
     <li>
       <%= link_to content.title, content_path(content)  %>
       <ul>
+        <li><%= image_tag(content.link_images[0]) %></li>
         <li><%= content.description %></li>
       </ul>
     </li>
