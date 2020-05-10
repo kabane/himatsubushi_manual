@@ -16,7 +16,9 @@
     <li>
       <%= link_to content.title, content_path(content)  %>
       <ul>
-        <li><%= image_tag(content.link_images[0]) %></li>
+        <% if content.thumbnail.attached? %>
+          <li><%= image_tag content.thumbnail %></li>
+        <% end %>
         <li><%= content.description %></li>
       </ul>
     </li>
