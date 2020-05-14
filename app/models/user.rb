@@ -20,14 +20,6 @@ class User < ApplicationRecord
       password: password,
       password_confirmation: password
     )
-    # user = User.new(
-    #   provider: auth.provider,
-    #   uid: auth.uid,
-    #   email: auth.info.email || "#{SecureRandom.hex}@example.com",
-    #   password: password,
-    #   password_confirmation: password
-    # )
-    # user.save!
   end
 
 end
