@@ -1,0 +1,10 @@
+<div class="nested-fields form-inline">
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <%= link_to_remove_association "削除", f %>
+</div>

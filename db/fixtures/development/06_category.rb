@@ -1,6 +1,12 @@
 Category.seed(
   {
-    name: 'サービス'
+    name: 'WEBサービス'
+  },
+  {
+    name: 'アプリ'
+  },
+  {
+    name: '食品'
   },
   {
     name: '動画'

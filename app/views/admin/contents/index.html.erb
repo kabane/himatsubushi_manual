@@ -1,0 +1,12 @@
+<h2>コンテンツ一覧</h2>
+<%= link_to '新規作成', new_admin_content_path %>
+<ul>
+  <% @contents.each do |content| %>
+    <li>
+      <%= link_to content.title, admin_content_path(content)  %>
+      <ul>
+        <li><%= content.description %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
