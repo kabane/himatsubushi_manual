@@ -26,6 +26,13 @@
     <%= form.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :categories %><br />
+    <%= collection_check_boxes(:content, :category_ids, Category.all, :id, :name) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+  </div>
+
   <div id="contents">
     <%= form.fields_for :links do |link| %>
       <%= render "link_fields", f: link %>
