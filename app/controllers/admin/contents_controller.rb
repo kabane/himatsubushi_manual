@@ -58,7 +58,7 @@ class Admin::ContentsController < Admin::ApplicationController
   end
 
   def content_params
-    params.require(:content).permit(:title, :description, :thumbnail, links_attributes: [:name, :url, :_destroy, :id])
+    params.require(:content).permit(:title, :description, :thumbnail, category_ids: [], links_attributes: [:name, :url, :_destroy, :id])
   end
 
 end
