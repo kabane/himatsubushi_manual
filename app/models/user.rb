@@ -6,20 +6,30 @@ class User < ApplicationRecord
   has_many :auth
   has_many :contents
 
-  def self.find_or_create_for_auth!(auth)
-    user = find_by(provider: auth.provider, uid: auth.uid)
+  enum gender: { male: 0, female: 1 , other: 2}, _prefix: true
 
-    return user if user.present?
+  def full_name
+    return email if !first_name? && !last_name?
 
-    password = Devise.friendly_token[0, 20]
+    "#{last_name} #{first_name}"
+  end
 
-    User.create!(
-      provider: auth.provider,
-      uid: auth.uid,
-      email: auth.info.email || "#{SecureRandom.hex}@example.com",
-      password: password,
-      password_confirmation: password
-    )
+  class << self
+    def find_or_create_for_auth!(auth)
+      user = find_by(provider: auth.provider, uid: auth.uid)
+
+      return user if user.present?
+
+      password = Devise.friendly_token[0, 20]
+
+      User.create!(
+        provider: auth.provider,
+        uid: auth.uid,
+        email: auth.info.email || "#{SecureRandom.hex}@example.com",
+        password: password,
+        password_confirmation: password
+      )
+    end
   end
 
 end
