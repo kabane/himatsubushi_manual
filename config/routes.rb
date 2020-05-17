@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :contents
     resources :users, only: [:show, :edit, :update]
+    resource :accounts, only: [:edit, :update]
   end
 end
